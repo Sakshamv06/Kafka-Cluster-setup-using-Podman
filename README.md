@@ -178,15 +178,15 @@ global:
 scrape_configs:
   - job_name: 'kafka1'
     static_configs:
-      - targets: ['192.168.122.1:7071']
+      - targets: ['192.x.x.x:7071']
 
   - job_name: 'kafka2'
     static_configs:
-      - targets: ['192.168.122.1:7072']
+      - targets: ['192.x.x.x:7072']
 
   - job_name: 'kafka-exporter'
     static_configs:
-      - targets: ['192.168.122.1:9308']
+      - targets: ['192.x.x.x:9308']
 
 ```
 
