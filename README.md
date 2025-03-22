@@ -172,11 +172,22 @@ podman run -d \
 
 ### Prometheus Configuration
 ```yaml
-# prometheus.yml
+global:
+  scrape_interval: 15s
+
 scrape_configs:
-  - job_name: 'kafka'
+  - job_name: 'kafka1'
     static_configs:
-      - targets: ['kafka-exporter:9308']
+      - targets: ['192.168.122.1:7071']
+
+  - job_name: 'kafka2'
+    static_configs:
+      - targets: ['192.168.122.1:7072']
+
+  - job_name: 'kafka-exporter'
+    static_configs:
+      - targets: ['192.168.122.1:9308']
+
 ```
 
 ### 7.4 Grafana
